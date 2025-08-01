@@ -1,6 +1,7 @@
 pandas
 matplotlib
 numpy
-pymc3
+pymc>=5.13 
+aesara 
 arviz
 flask

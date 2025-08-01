@@ -40,9 +40,6 @@ jobs:
       with:
         node-version: 18
 
-    - name: Install frontend dependencies
-      run: npm install
-
     - name: Lint & Build React App
       run: |
         npm run lint --if-present
