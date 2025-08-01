@@ -1,0 +1,46 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyMC3 cache / sampling traces
+trace.pkl
+*.nc
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# Flask runtime
+instance/
+*.log
+
+# Virtual environments
+venv/
+.env
+.env.*
+
+# Data files
+data/*.csv
+!data/events_sample.csv  # Keep sample if needed
+
+# Dashboard build files
+dashboard/frontend/node_modules/
+dashboard/frontend/.next/
+dashboard/frontend/build/
+dashboard/frontend/dist/
+dashboard/frontend/.env
+
+# System files
+.DS_Store
+Thumbs.db
