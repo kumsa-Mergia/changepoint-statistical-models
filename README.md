@@ -135,15 +135,14 @@ jupyter notebook notebook/
 
 This is the frontend React dashboard visualizing Brent oil price changes and key historical events.
 
-![Dashboard Screenshot](https://drive.google.com/uc?export=view\&id=1PJeodQQEXvWNT5nbNjbg6CYH64dTcU2u)
-
+![Dashboard Screenshot](https://drive.google.com/uc?export=view\&id=1Q3njCIgvaUvt-UDqIw5Hj7VSe3zXg7hs)
 ---
 
 ## 🧑‍💻 Tech Stack
 
 * **Frontend:** React, Vite, Tailwind CSS, Recharts
 * **Backend:** Flask (Python), REST API
-* **Modeling:** PyMC3, NumPy, Pandas
+* **Modeling:** PyMC, NumPy, Pandas
 * **Visualization:** Matplotlib, Plotly, Recharts
 * **Packaging:** Modular Python scripts and notebooks
 
