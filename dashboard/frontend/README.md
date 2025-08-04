@@ -76,5 +76,4 @@ frontend/
 
 This is the frontend React application for visualizing Brent crude oil price trends and key economic events using a dynamic chart.
 
-![Dashboard Screenshot](https://drive.google.com/uc?export=view&id=1PJeodQQEXvWNT5nbNjbg6CYH64dTcU2u)
-
+![Dashboard Screenshot](https://drive.google.com/uc?export=view&id=1Q3njCIgvaUvt-UDqIw5Hj7VSe3zXg7hs)
