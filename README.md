@@ -1,18 +1,24 @@
-# Brent Oil Price Change Point Analysis
+# 🛢️ Brent Oil Price Change Point Analysis
 
-## Project Overview
+## 🚀 Project Overview
 
-This project analyzes the impact of major geopolitical, economic, and organizational events on Brent crude oil prices. Using historical daily price data from 1987 to 2022, we apply Bayesian Change Point detection methods to identify significant structural breaks in the price series. By linking these breaks to key events—such as political decisions, conflicts in oil-producing regions, international sanctions, and OPEC policy changes—we provide actionable insights for investors, policymakers, and energy companies.
+This project analyzes the impact of major geopolitical, economic, and organizational events on **Brent crude oil prices**. It uses **Bayesian Change Point Detection** to identify structural breaks in historical price data (1987–2022). These change points are then correlated with real-world events like wars, sanctions, OPEC decisions, and economic collapses.
 
-## Objectives
+📊 A **React + Tailwind CSS dashboard** allows users to explore trends interactively, while the backend is powered by **Flask** to serve model insights.
 
-- Identify key events significantly affecting Brent oil prices.
-- Quantify price changes associated with these events.
-- Develop a reproducible analysis workflow.
-- Apply Bayesian Change Point models to detect structural breaks.
-- Communicate insights effectively to stakeholders.
+---
 
-## Folder Structure
+## 🎯 Objectives
+
+- Detect significant structural breaks in Brent oil prices.
+- Link those change points to real-world events.
+- Build an interactive and informative dashboard.
+- Provide valuable insights for analysts, investors, and policymakers.
+- Create a clean, reproducible analysis workflow.
+
+---
+
+## 📁 Folder Structure
 
 ```
 
@@ -23,48 +29,58 @@ changepoint-statistical-models/
 │
 ├── src/
 │   ├── data_loader.py              # Data loading and preprocessing scripts
-│   ├── eda.py                     # Exploratory Data Analysis scripts
+│   ├── eda.py                      # Exploratory Data Analysis scripts
 │   ├── change_point_model.py       # Bayesian Change Point modeling code
-│   ├── api.py                     # API layer for serving model results
+│   ├── api.py                      # Flask API layer
 │
 ├── dashboard/
-│   ├── frontend/                  # React application for visualization
-│   └── backend/                   # Flask backend serving data and model results
+│   ├── frontend/                   # React + Tailwind dashboard UI
+│       ├── public/    
+│       ├── src/
+│           ├──  assets/ 
+│           ├──  components/               # Reusable UI components
+│                 ├── PriceChart.jsx
+│                 ├── EventMarkers.jsx
+│           ├──  App.jsx                   # Main app component
+│           ├──  main.jsx                     
+│           ├──  tailwind.config.js        # Tailwind configuration
+│           ├──  postcss.config.js         # PostCSS config for Tailwind
+│           ├──  package.json
+│           ├──  vite.config.js                  # Vite dev/build config
+│   └── backend/                    # Flask backend serving model data
 │       └── app.py
 │
 ├── notebook/
-│   └── change-point_analysis.ipynb           
-│   └── eda_analysis.ipynb
+│   ├── change-point\_analysis.ipynb # Change point detection workflow
+│   └── eda\_analysis.ipynb          # EDA insights
 │
-└── main.py                       # Main script to run the complete analysis pipeline
+└── main.py                         # Main script for running full pipeline
 
 ````
 
-## Data Description
+---
 
-- **Dataset:** `BrentOilPrices.csv` contains daily Brent crude oil prices from May 20, 1987, to September 30, 2022.
-- **Columns:**  
-  - `Date` — Observation date (day-month-year format)  
-  - `Price` — Brent oil price in USD per barrel
+## 🧾 Data Description
 
-## Methodology
+- **Dataset:** `BrentOilPrices.csv`
+- **Period:** May 20, 1987 – September 30, 2022
+- **Columns:**
+  - `Date`: Date of observation (YYYY-MM-DD)
+  - `Price`: Brent crude oil price (USD per barrel)
 
-1. **Data Preparation & EDA**  
-   Data loading, cleaning, visualization of trends and volatility.
+---
 
-2. **Event Data Compilation**  
-   Research and preparation of key geopolitical and economic events dataset.
+## 🧠 Methodology
 
-3. **Bayesian Change Point Modeling**  
-   Identification of statistically significant structural breaks using PyMC3.
+1. **Data Preparation & EDA:** Clean and visualize historical prices.
+2. **Event Compilation:** Manually annotate key historical events (wars, crashes, etc.).
+3. **Bayesian Change Point Detection:** Detect structural breaks using `PyMC3`.
+4. **Interpretation:** Associate breaks with actual events to derive causality.
+5. **Visualization Dashboard:** Build an interactive React frontend with Flask API backend.
 
-4. **Results Interpretation**  
-   Associating change points with key events and quantifying their impact.
+---
 
-5. **Dashboard Visualization**  
-   Interactive frontend and backend for exploring the analysis results.
-
-## Installation
+## 🛠️ Installation
 
 Clone the repository and install dependencies:
 
@@ -72,43 +88,71 @@ Clone the repository and install dependencies:
 git clone https://github.com/kumsa-Mergia/changepoint-statistical-models.git
 cd changepoint-statistical-models
 
+# Python dependencies
 pip install -r requirements.txt
 ````
 
-## Usage
+Install frontend dependencies:
 
-* Run the main analysis pipeline:
+```bash
+cd dashboard/frontend
+npm install
+```
+
+---
+
+## 🚦 Usage
+
+### 1. Run main pipeline
 
 ```bash
 python main.py
 ```
 
-* Launch the dashboard backend (Flask):
+### 2. Start backend API
 
 ```bash
 cd dashboard/backend
 python app.py
 ```
 
-* Launch the dashboard frontend (React):
+### 3. Launch frontend (React + Vite)
 
 ```bash
 cd dashboard/frontend
-npm start
+npm run dev
 ```
 
-* Explore interactive analysis in Jupyter notebook:
+### 4. Explore Jupyter notebooks
 
 ```bash
 jupyter notebook notebook/
 ```
 
-## Future Work
+---
 
-* Incorporate macroeconomic data (GDP, inflation, exchange rates).
-* Explore advanced time series models (VAR, Markov-Switching).
-* Apply causal inference techniques for stronger attribution.
+## 📷 Sample Screenshot
 
-## Contributing
+This is the frontend React dashboard visualizing Brent oil price changes and key historical events.
 
-Contributions and feedback are welcome! Please open an issue or submit a pull request.
+![Dashboard Screenshot](https://drive.google.com/uc?export=view\&id=1PJeodQQEXvWNT5nbNjbg6CYH64dTcU2u)
+
+---
+
+## 🧑‍💻 Tech Stack
+
+* **Frontend:** React, Vite, Tailwind CSS, Recharts
+* **Backend:** Flask (Python), REST API
+* **Modeling:** PyMC3, NumPy, Pandas
+* **Visualization:** Matplotlib, Plotly, Recharts
+* **Packaging:** Modular Python scripts and notebooks
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and PRs are warmly welcome. Please open an [issue](https://github.com/kumsa-Mergia/changepoint-statistical-models/issues) to discuss ideas or improvements.
+
+---
+
+
